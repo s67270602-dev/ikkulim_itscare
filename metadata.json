@@ -1,0 +1,8 @@
+{
+  "name": "ikkulim-its-care-2321",
+  "description": "부산, 양산, 울산 전 지역 업소용 제빙기 및 에어컨 완전 분해 청소 전문 서비스 '이끌림잇츠케어'. 동남권 위생 관리의 정석을 보여드립니다.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
