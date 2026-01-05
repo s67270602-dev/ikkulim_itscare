@@ -7,7 +7,7 @@ export const COLORS = {
 };
 
 export const IMAGES = {
-  HERO_BG: "https://drive.google.com/uc?export=view&id=13VUrHj_0rwH6juDLO0Q4HBckXC8dLHfz",
+  HERO_BG: "https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/%EB%A9%94%EC%9D%B8.jpg",
   ICE_MAKER: "https://images.unsplash.com/photo-1551714502-0e427783935b?auto=format&fit=crop&q=80&w=1600",
   AC_CLEANING: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1600",
   ULSAN_CITY: "https://drive.google.com/thumbnail?id=1Q2HGVOV8UtjUaeIuTQoqQwGS_L1zWOX5&sz=w2000",

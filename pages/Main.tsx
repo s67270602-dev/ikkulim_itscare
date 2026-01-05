@@ -13,7 +13,7 @@ const Main: React.FC = () => {
            {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/80 to-[#020617]/40 z-10"></div>
           <img
-            src="https://images.unsplash.com/photo-1455582916367-25f75bfc6710?q=80&w=2000&auto=format&fit=crop"
+            src="https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/%EB%A9%94%EC%9D%B8.jpg"
             alt="Dark Blue Nature Background"
             className="w-full h-full object-cover opacity-60"
           />
@@ -64,7 +64,7 @@ const Main: React.FC = () => {
             <div className="w-full md:w-1/2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group bg-gray-100">
                 <img 
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" 
+                  src="https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/20250821_161033.jpg" 
                   alt="오염된 내부" 
                   className="w-full h-[220px] md:h-[360px] object-cover filter brightness-50 transition-transform duration-700 group-hover:scale-105"
                 />
