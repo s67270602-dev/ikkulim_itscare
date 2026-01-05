@@ -13,7 +13,7 @@ const Main: React.FC = () => {
            {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/80 to-[#020617]/40 z-10"></div>
           <img
-            src="https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/%EB%A9%94%EC%9D%B8.jpg"
+            src="/images/%EB%A9%94%EC%9D%B8.jpg"
             alt="Dark Blue Nature Background"
             className="w-full h-full object-cover opacity-60"
           />

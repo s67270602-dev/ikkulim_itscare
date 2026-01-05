@@ -74,7 +74,7 @@ const About: React.FC = () => {
             <div className="w-full lg:w-1/2">
                <div className="rounded-2xl overflow-hidden shadow-lg relative group">
                  <img 
-                   src="https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202025-02-24%20121821.jpg" 
+                   src="/images/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202025-02-24%20121821.jpg" 
                    alt="출장 가능 지역 지도" 
                    className="w-full h-auto object-cover min-h-[250px] md:min-h-[300px] transition-transform duration-700 group-hover:scale-105"
                  />
