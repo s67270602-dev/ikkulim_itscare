@@ -64,7 +64,7 @@ const Main: React.FC = () => {
             <div className="w-full md:w-1/2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group bg-gray-100">
                 <img 
-                  src="https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/20250821_161033.jpg" 
+                  src="/images/20250821_161033.jpg" 
                   alt="오염된 내부" 
                   className="w-full h-[220px] md:h-[360px] object-cover filter brightness-50 transition-transform duration-700 group-hover:scale-105"
                 />
