@@ -7,7 +7,7 @@ export const COLORS = {
 };
 
 export const IMAGES = {
-  HERO_BG: "https://drive.google.com/uc?export=view&id=13VUrHj_0rwH6juDLO0Q4HBckXC8dLHfz",
+  HERO_BG: "https://raw.githubusercontent.com/s67270602-dev/ikkulim_itscare/main/public/images/%EB%A9%94%EC%9D%B8.jpg",
   ICE_MAKER: "https://images.unsplash.com/photo-1551714502-0e427783935b?auto=format&fit=crop&q=80&w=1600",
   AC_CLEANING: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1600",
   ULSAN_CITY: "https://drive.google.com/thumbnail?id=1Q2HGVOV8UtjUaeIuTQoqQwGS_L1zWOX5&sz=w2000",
@@ -18,8 +18,8 @@ export const NAV_LINKS = [
   { label: "홈", path: "/" },
   { label: "위생 정보", path: "/process" },
   { label: "서비스/요금", path: "/services" },
+  { label: "서비스 지역", path: "/service-area" },
   { label: "자주 묻는 질문", path: "/qa" },
-  { label: "안심 매장", path: "/safe-stores" },
   { label: "회사 소개", path: "/about" },
   { label: "견적 문의", path: "/contact" }
 ];
@@ -29,39 +29,5 @@ export const SAFE_STORES = [
   { name: "더벤티 울산화정점" },
   { name: "1000cc 월평점" },
   { name: "태번159" },
-  { name: "더벤티 울산화봉시장점" },
-  { name: "SK ADVANCED" },
-  { name: "STIC" },
-  { name: "내황초등학교" },
-  { name: "개운초등학교" },
-  { name: "김복남맥주전문점(송정)" },
-  { name: "더그카페" },
-  { name: "더벤티(천상점)" },
-  { name: "더벤티(울주청량점)" },
-  { name: "디저트39(송정점)" },
-  { name: "김해만나커피" },
-  { name: "메이봄커피" },
-  { name: "뺑파제(언양점)" },
-  { name: "뺑파제(일산점)" },
-  { name: "스시현" },
-  { name: "히어로보드카페" },
-  { name: "아메리칸트레일러(롯데점)" },
-  { name: "에프엠테크" },
-  { name: "부산와플칸" },
-  { name: "요산요수카페" },
-  { name: "이디야커피(시청점)" },
-  { name: "양산이엔커피" },
-  { name: "잇츠논카페" },
-  { name: "정성육회(덕신점)" },
-  { name: "채채제과점" },
-  { name: "OSIM카페" },
-  { name: "카페에일린" },
-  { name: "컴포즈(문수점)" },
-  { name: "컴포즈(언양점)" },
-  { name: "컴포즈(옥동점)" },
-  { name: "컴포즈(울산터미널점)" },
-  { name: "포커스온덤벨" },
-  { name: "부산할맥" },
-  { name: "해우울산점" }
+  { name: "에밀리아" }
 ];
-

@@ -104,9 +104,33 @@ const Footer: React.FC = () => {
               이끌림잇츠케어
             </h3>
             <p className="text-xs md:text-sm leading-relaxed text-gray-500 break-keep">
-              부산/양산/울산 전 지역 업소용 제빙기 및 에어컨 완전 분해 청소 전문 업체.<br className="hidden md:block"/>
+              부산/울산/양산/김해 전 지역 업소용 제빙기 및 에어컨 완전 분해 청소 전문 업체.<br className="hidden md:block"/>
               보이지 않는 곳의 곰팡이와 세균까지 완벽하게 제거합니다.
             </p>
+
+            {/* Social Icons */}
+            <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
+               {/* Naver Blog */}
+               <a 
+                 href="https://blog.naver.com/itscare77" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="w-10 h-10 rounded-full bg-[#03C75A] flex items-center justify-center text-white shadow-md hover:-translate-y-1 transition-transform group"
+                 title="네이버 블로그"
+               >
+                 <span className="font-black text-sm group-hover:scale-110 transition-transform">N</span>
+               </a>
+               {/* Kakao Channel */}
+               <a 
+                 href="https://pf.kakao.com/_Azgyn" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="w-10 h-10 rounded-full bg-[#FAE100] flex items-center justify-center text-[#3B1E1E] shadow-md hover:-translate-y-1 transition-transform group"
+                 title="카카오톡 채널"
+               >
+                 <i className="fas fa-comment text-lg group-hover:scale-110 transition-transform"></i>
+               </a>
+            </div>
           </div>
 
           {/* Contact Center */}

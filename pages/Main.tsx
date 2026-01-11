@@ -26,7 +26,7 @@ const Main: React.FC = () => {
             </h1>
             
             <p className="text-gray-300 text-[12px] sm:text-sm md:text-lg lg:text-[19px] font-medium mb-6 md:mb-10 leading-relaxed break-keep max-w-xl md:max-w-2xl opacity-90 pr-2">
-              부산/울산/양산 1등 제빙기 청소 전문 업체. 보이지 않는 곳의 곰팡이까지 완벽하게 제거합니다. 
+              부산/울산/양산/김해 1등 제빙기 청소 전문 업체. 보이지 않는 곳의 곰팡이까지 완벽하게 제거합니다. 
               HACCP 기준에 부합하는 친환경 살균 세척으로 고객에게 신뢰를 선물하세요.
             </p>
 
@@ -120,7 +120,7 @@ const Main: React.FC = () => {
             <h2 className="text-xl md:text-4xl font-black text-gray-900 mb-3 md:mb-4">
               <span className="text-[#0069D9]">3단계 토탈 케어</span> 시스템
             </h2>
-            <p className="text-gray-500 text-[13px] md:text-base">
+            <p className="text-gray-500 text-sm md:text-base">
               단순 세척이 아닌, 완전 분해와 고온 스팀 살균으로 새 기계처럼!
             </p>
           </div>
@@ -162,14 +162,14 @@ const Main: React.FC = () => {
         <div className="container mx-auto px-5 md:px-6 max-w-[1200px]">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-xl md:text-4xl font-black text-gray-900 mb-3 md:mb-4">
-              부산/울산/양산 <span className="text-[#0069D9]">500+ 매장</span>의 선택
+              부산/울산/양산/김해 <span className="text-[#0069D9]">500+ 매장</span>의 선택
             </h2>
             <p className="text-gray-500 text-[13px] md:text-base">
               직접 경험하신 사장님들의 생생한 후기입니다.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               {
                 text: "얼음에서 나던 냄새가 싹 사라졌어요. 손님들이 얼음이 더 투명해졌다고 좋아하십니다.",
@@ -182,6 +182,10 @@ const Main: React.FC = () => {
               {
                 text: "기사님이 정말 꼼꼼하게 분해해서 청소해주시는 걸 보고 믿음이 갔습니다.",
                 author: "양산 물금 C 레스토랑 사장님"
+              },
+              {
+                text: "지인 소개로 이용했는데, 보이지 않는 곳까지 완벽하게 청소해주셔서 놀랐습니다.",
+                author: "김해 장유 D 베이커리 사장님"
               }
             ].map((review, idx) => (
               <div key={idx} className="bg-[#F8F9FA] p-5 md:p-8 rounded-2xl border border-gray-100 flex flex-col justify-between h-full hover:border-blue-100 transition-colors">

@@ -5,7 +5,7 @@ import { GoogleGenAI } from '@google/genai';
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai'; text: string }[]>([
-    { role: 'ai', text: '안녕하세요! 이끌림잇츠케어 AI 어드바이저입니다. 부산, 양산, 울산 지역의 제빙기나 에어컨 위생 관리에 대해 궁금한 점이 있으신가요?' }
+    { role: 'ai', text: '안녕하세요! 이끌림잇츠케어 AI 어드바이저입니다. 부산, 울산, 양산, 김해 지역의 제빙기나 에어컨 위생 관리에 대해 궁금한 점이 있으신가요?' }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -34,9 +34,9 @@ const Chatbot: React.FC = () => {
         contents: userMessage,
         config: {
           systemInstruction: `당신은 '이끌림잇츠케어'의 전문 상담사입니다. 
-          부산, 양산, 울산 지역 전역에서 제빙기 청소, 에어컨 청소를 전문으로 하는 업체임을 강조하세요.
+          부산, 울산, 양산, 김해 지역 전역에서 제빙기 청소, 에어컨 청소를 전문으로 하는 업체임을 강조하세요.
           답변은 친절하고 전문적이어야 하며, 제빙기의 물때, 곰팡이, 에어컨 세균의 위험성을 알려주세요.
-          동남권(부산/양산/울산) 전 지역 어디든 신속하게 방문 가능하다는 점을 언급하세요.
+          동남권(부산/울산/양산/김해) 전 지역 어디든 신속하게 방문 가능하다는 점을 언급하세요.
           마지막에는 항상 '정확한 견적은 방문 상담을 통해 가능하니 1577-7672로 연락달라'고 안내하세요.
           한국어로 답변하세요.`
         }
@@ -52,15 +52,44 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60]">
+    <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-3">
+      
+      {/* Social Floating Buttons (Visible only when chat is closed) */}
+      {!isOpen && (
+        <>
+          {/* Naver Blog */}
+          <a 
+            href="https://blog.naver.com/itscare77" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#03C75A] w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-white text-xl font-black hover:scale-110 transition-transform animate-fade-in"
+            title="네이버 블로그"
+          >
+            N
+          </a>
+          
+          {/* Kakao Channel */}
+          <a 
+            href="https://pf.kakao.com/_Azgyn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-[#FAE100] w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-[#3B1E1E] text-xl hover:scale-110 transition-transform animate-fade-in"
+            title="카카오톡 채널"
+          >
+            <i className="fas fa-comment"></i>
+          </a>
+        </>
+      )}
+
+      {/* Chatbot Window or Trigger Button */}
       {isOpen ? (
-        <div className="bg-white w-80 md:w-96 h-[500px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100 transition-all">
+        <div className="bg-white w-80 md:w-96 h-[500px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100 transition-all animate-slide-up">
           <div className="bg-[#0069D9] p-4 flex justify-between items-center text-white">
             <div className="flex items-center gap-2">
               <i className="fas fa-robot text-xl"></i>
               <span className="font-bold">위생 관리 AI 상담</span>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-blue-700 w-8 h-8 rounded-full">
+            <button onClick={() => setIsOpen(false)} className="hover:bg-blue-700 w-8 h-8 rounded-full flex items-center justify-center">
               <i className="fas fa-times"></i>
             </button>
           </div>

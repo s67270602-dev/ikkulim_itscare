@@ -8,7 +8,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import QA from './pages/QA';
-import SafeStores from './pages/SafeStores';
+import ServiceArea from './pages/ServiceArea';
 
 // 페이지 이동 시 스크롤을 최상단으로 올리는 컴포넌트
 const ScrollToTop = () => {
@@ -30,8 +30,8 @@ const App: React.FC = () => {
           <Route path="/" element={<Main />} />
           <Route path="/process" element={<Process />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/service-area" element={<ServiceArea />} />
           <Route path="/qa" element={<QA />} />
-          <Route path="/safe-stores" element={<SafeStores />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

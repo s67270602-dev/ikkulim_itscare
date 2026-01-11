@@ -107,7 +107,7 @@ const QA: React.FC = () => {
              <div className="relative z-10">
                 <h3 className="text-xl md:text-3xl font-black mb-3 md:mb-4 tracking-tight">더 궁금한 점이 있으신가요?</h3>
                 <p className="text-gray-400 text-xs md:text-base mb-8 md:mb-10 break-keep font-medium leading-relaxed">
-                  부산·양산·울산 제빙기 청소 전문가가<br className="md:hidden"/> 직접 친절하게 상담해 드립니다.
+                  부산·울산·양산·김해 제빙기 청소 전문가가<br className="md:hidden"/> 직접 친절하게 상담해 드립니다.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                     <a href="tel:1577-7672" className="bg-[#0069D9] hover:bg-[#005bb5] text-white px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-black shadow-lg hover:shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 text-sm md:text-base">

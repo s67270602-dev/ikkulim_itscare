@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
           <div className="text-center mb-6 md:mb-12 animate-fade-in">
             <h1 className="text-2xl md:text-5xl font-black text-gray-900 mb-2 md:mb-4 tracking-tight">간편 견적 & 예약 신청</h1>
             <p className="text-gray-500 text-xs md:text-lg max-w-2xl mx-auto break-keep">
-              부산·양산·울산 전 지역, 전문가가 직접 방문하여 꼼꼼하게 점검해 드립니다.
+              부산·울산·양산·김해 전 지역, 전문가가 직접 방문하여 꼼꼼하게 점검해 드립니다.
             </p>
           </div>
 
@@ -173,11 +173,15 @@ const Contact: React.FC = () => {
               </span>
               <span className="w-1 h-1 bg-gray-300 rounded-full hidden sm:block"></span>
               <span className="flex items-center gap-1.5 text-[#0069D9]">
+                <i className="fas fa-check-circle"></i> 울산 전 지역
+              </span>
+              <span className="w-1 h-1 bg-gray-300 rounded-full hidden sm:block"></span>
+              <span className="flex items-center gap-1.5 text-[#0069D9]">
                 <i className="fas fa-check-circle"></i> 양산 전 지역
               </span>
               <span className="w-1 h-1 bg-gray-300 rounded-full hidden sm:block"></span>
               <span className="flex items-center gap-1.5 text-[#0069D9]">
-                <i className="fas fa-check-circle"></i> 울산 전 지역
+                <i className="fas fa-check-circle"></i> 김해 전 지역
               </span>
               <span className="w-full sm:w-auto sm:ml-4 font-black text-gray-800 bg-gray-100 px-3 py-1 rounded-md mt-2 sm:mt-0">업소용제빙기 무료방문점검 진행중</span>
             </p>

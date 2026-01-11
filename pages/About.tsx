@@ -9,12 +9,12 @@ const About: React.FC = () => {
       <section className="py-12 md:py-32 bg-white text-center">
         <div className="container mx-auto px-5 md:px-6 max-w-[1000px]">
           <h1 className="text-2xl md:text-5xl font-black text-gray-900 mb-6 md:mb-8 leading-tight tracking-tight">
-            부산·울산·양산 위생을 책임지는<br />
+            부산·울산·양산·김해 위생을 책임지는<br />
             <span className="text-[#0091EA]">Clean Partner</span>
           </h1>
           <p className="text-gray-500 text-sm md:text-lg leading-relaxed max-w-3xl mx-auto break-keep font-medium">
             이끌림잇츠케어는 "내 가족이 먹는 얼음"이라는 마음가짐으로 시작했습니다.<br className="hidden md:block"/>
-            단순히 기계를 닦는 것이 아니라, 부산/울산/양산 지역 사장님들의 위생 고민을 해결해드리는 파트너가 되겠습니다.<br className="hidden md:block"/>
+            단순히 기계를 닦는 것이 아니라, 부산/울산/양산/김해 지역 사장님들의 위생 고민을 해결해드리는 파트너가 되겠습니다.<br className="hidden md:block"/>
             최신 스팀 장비와 검증된 친환경 세제를 사용하여 가장 안전한 얼음을 약속드립니다.
           </p>
         </div>
@@ -48,7 +48,7 @@ const About: React.FC = () => {
               <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border border-[#0091EA] flex items-center justify-center text-[#0091EA] text-xl md:text-2xl mb-4 md:mb-5 bg-white shadow-sm">
                 <i className="fas fa-map-marker-alt"></i>
               </div>
-              <strong className="text-xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight">부산/울산/양산</strong>
+              <strong className="text-xl md:text-4xl font-black text-gray-900 mb-2 tracking-tight">부산/울산/양산/김해</strong>
               <span className="text-gray-500 text-xs md:text-sm font-medium">서비스 지역</span>
             </div>
 
@@ -88,7 +88,7 @@ const About: React.FC = () => {
             <div className="w-full lg:w-1/2 pt-2 md:pt-4">
                <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3 md:mb-4 tracking-tight">출장 가능 지역 안내</h2>
                <p className="text-gray-500 text-sm md:text-base mb-8 md:mb-10 leading-relaxed font-medium">
-                 부산광역시를 중심으로 울산, 양산까지 서비스를 확대하여 운영하고 있습니다.
+                 부산광역시를 중심으로 울산, 양산, 김해까지 서비스를 확대하여 운영하고 있습니다.
                </p>
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
@@ -105,12 +105,12 @@ const About: React.FC = () => {
 
                  {/* Ulsan/Yangsan */}
                  <div>
-                    <h3 className="text-gray-900 font-bold text-lg mb-2 md:mb-3">울산 / 양산</h3>
+                    <h3 className="text-gray-900 font-bold text-lg mb-2 md:mb-3">울산 / 양산 / 김해</h3>
                     <p className="text-gray-600 text-sm leading-6 md:leading-7 break-keep font-medium">
                       울산광역시 전 지역<br/>
                       양산시 전 지역<br/>
                       (물금, 웅상 포함)<br/>
-                      김해시 일부 지역
+                      김해시 전 지역
                     </p>
                  </div>
                </div>
