@@ -61,7 +61,7 @@ const ServiceArea: React.FC = () => {
       images: [
         "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-01.jpg",
         "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-02.jpg",
-        "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg.jpg.jpg"
+        "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg"
       ]
     }
   };
