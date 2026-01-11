@@ -12,7 +12,7 @@ const Main: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/90 via-[#020617]/70 to-[#020617]/40 z-10 sm:bg-gradient-to-r"></div>
           <img
-            src="/images/%EB%A9%94%EC%9D%B8.jpg"
+            src="/images/itscare-ice-machine-cleaning-main-banne.jpg"
             alt="Dark Blue Nature Background"
             className="w-full h-full object-cover opacity-60"
           />
@@ -65,7 +65,7 @@ const Main: React.FC = () => {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group bg-gray-100">
                 <img 
-                  src="/images/20250821_161033.jpg" 
+                  src="/images/itscare-ice-machine-cleaning-main-banner-1.jpg" 
                   alt="오염된 내부" 
                   className="w-full h-[260px] sm:h-[350px] md:h-[460px] object-cover filter brightness-50 transition-transform duration-700 group-hover:scale-105"
                 />

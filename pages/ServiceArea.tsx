@@ -17,9 +17,9 @@ const ServiceArea: React.FC = () => {
       이끌림잇츠케어는 울산 지역 업소용 제빙기를 대상으로 내부 상태를 확인하고, 위생 기준에 맞춘 분해 점검과 세척·살균 중심의 위생 청소를 진행합니다.`,
       caption: "울산 지역 업소용 제빙기 분해 점검 및 내부 위생 세척 작업 모습",
       images: [
-        "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=800"
+        "/images/ulsan-ikkulim-itscare-ice-machine-cleaning-banner-01.jpg",
+        "/images/ulsan-ikkulim-itscare-ice-machine-cleaning-banner-02.jpg",
+        "/images/ulsan-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg"
       ]
     },
     busan: {
@@ -31,9 +31,9 @@ const ServiceArea: React.FC = () => {
       이끌림잇츠케어는 부산 지역 업소용 제빙기의 내부 구조와 오염 상태를 확인한 뒤, 필요한 범위 내에서 세척과 살균 중심의 위생 관리 작업을 진행합니다.`,
       caption: "부산 지역 업소용 제빙기 내부 오염 구간 세척 및 살균 과정",
       images: [
-        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1605218427306-635ba2439af2?auto=format&fit=crop&q=80&w=800"
+        "/images/busan-ikkulim-itscare-ice-machine-cleaning-banner-01.jpg",
+        "/images/busan-ikkulim-itscare-ice-machine-cleaning-banner-02.jpg",
+        "/images/busan-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg"
       ]
     },
     yangsan: {
@@ -45,9 +45,9 @@ const ServiceArea: React.FC = () => {
       이끌림잇츠케어는 양산 지역 업소용 제빙기를 대상으로 내부 상태를 기준으로 세척·살균 위주의 위생 청소를 진행합니다.`,
       caption: "양산 지역 업소용 제빙기 고압 세척 및 고온 스팀 소독 작업 모습",
       images: [
-        "https://images.unsplash.com/photo-1551714502-0e427783935b?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1631557371533-8a9d10a90757?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&q=80&w=800"
+        "/images/yangsan-ikkulim-itscare-ice-machine-cleaning-banner-01.jpg",
+        "/images/yangsan-ikkulim-itscare-ice-machine-cleaning-banner-02.jpg",
+        "/images/yangsan-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg"
       ]
     },
     gimhae: {
@@ -59,9 +59,9 @@ const ServiceArea: React.FC = () => {
       이끌림잇츠케어는 김해 지역 업소용 제빙기의 내부 상태를 확인하고, 위생 기준에 맞춘 세척과 살균 중심의 관리 작업을 진행합니다.`,
       caption: "김해 지역 업소용 제빙기 내부 위생 관리 및 정상 작동 점검 모습",
       images: [
-        "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=800"
+        "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-01.jpg",
+        "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-02.jpg",
+        "/images/gimhae-ikkulim-itscare-ice-machine-cleaning-banner-03.jpg"
       ]
     }
   };

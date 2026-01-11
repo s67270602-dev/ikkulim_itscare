@@ -141,7 +141,9 @@ const Footer: React.FC = () => {
             </div>
             <p className="text-xs md:text-sm text-gray-500 leading-relaxed break-keep">
               운영시간 : 09:00 - 22:00 (연중무휴)<br/>
-              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span><br className="md:hidden"/> 부산광역시 사하구 오작로184번길32
+              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span><br className="md:hidden"/> 
+              부산광역시 사하구 오작로184번길32 <span className="hidden md:inline">/</span><br className="md:hidden"/>
+              부산광역시 사하구 다대로 142번길106 1층
             </p>
           </div>
         </div>
