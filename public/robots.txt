@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ikkulim-itscare.vercel.app/sitemap.xml
