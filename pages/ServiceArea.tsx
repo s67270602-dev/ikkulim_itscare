@@ -106,7 +106,10 @@ const ServiceArea: React.FC = () => {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => {
+                    setActiveTab(tab.id);
+                    window.scrollTo(0, 0);
+                }}
                 className={`
                   w-1/2 md:w-auto md:flex-1 py-4 md:py-5 px-1 md:px-4 
                   text-[13px] md:text-lg font-bold transition-all relative whitespace-nowrap

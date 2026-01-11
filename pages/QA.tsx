@@ -9,27 +9,27 @@ const QA: React.FC = () => {
     {
       category: '관리 주기',
       question: "제빙기 청소 주기는 어떻게 되나요?",
-      answer: "일반적으로 위생 관리를 위해 3개월 주기의 정기 세척을 권장합니다. 특히 여름철이나 카페처럼 사용량이 많은 매장은 1~2개월 주기로 관리해야 물때와 곰팡이 발생을 막고 투명한 얼음을 유지할 수 있습니다."
+      answer: "업소용 제빙기는 일반적으로 2~3개월 주기의 내부 점검과 위생 관리가 권장됩니다. 카페나 맥주전문점처럼 얼음 사용량이 많은 매장은 사용 환경에 따라 1~2개월 주기로 관리하는 경우도 있습니다. 중요한 기준은 ‘겉면 청소’가 아니라 ‘제빙기 내부 상태’입니다."
     },
     {
       category: '위생 문제',
-      question: "얼음에서 냄새가 나거나 검은 이물질이 보여요.",
-      answer: "얼음에서 냄새가 나는 것은 내부 물탱크에 곰팡이나 물때(슬라임)가 번식했기 때문입니다. 검은 이물질은 곰팡이 덩어리이거나 부품 부식으로 인한 가루일 수 있습니다. 건강에 해로울 수 있으므로 즉시 사용을 중단하고 전문 분해 세척을 받으셔야 합니다."
+      question: "얼음에서 냄새가 나거나 검은 이물질이 보이는 이유는 무엇인가요?",
+      answer: "제빙기 내부에 물때나 스케일이 누적되면 얼음에서 냄새가 나거나 미세한 이물감이 느껴질 수 있습니다. 외관은 깨끗해 보여도 내부 관리가 부족하면 이런 증상이 나타날 수 있어, 내부 점검과 위생 관리가 필요합니다."
     },
     {
       category: '작업 관련',
-      question: "영업 중에도 청소가 가능한가요?",
-      answer: "네, 가능합니다. 다만 고압 세척기 사용으로 인한 소음이 발생할 수 있고, 세척 작업 중에는 제빙기 주변 공간이 필요하므로 손님이 비교적 적은 시간대나 오픈 전/마감 후 시간을 추천드립니다."
+      question: "영업 중에도 제빙기 청소가 가능한가요?",
+      answer: "작업 장비 소음과 세척 과정 특성상, 대부분의 업소에서는 영업 종료 후 또는 휴무 시간에 작업을 진행합니다. 매장 상황에 따라 일정 조율이 가능하며, 상담 시 안내드립니다."
     },
     {
       category: '소요 시간',
       question: "작업 시간은 얼마나 걸리나요?",
-      answer: "제빙기 1대 기준, 완전 분해 세척 및 스팀 살균까지 약 1시간 30분에서 2시간 정도 소요됩니다. 오염도가 심하거나 대형 기종(200kg 이상)의 경우 시간이 조금 더 추가될 수 있습니다."
+      answer: "제빙기 기종과 용량, 내부 오염 상태에 따라 다르지만 보통 1~2시간 정도 소요됩니다. 대형 업소용 제빙기의 경우 작업 시간이 더 소요될 수 있습니다."
     },
     {
       category: '취급 기종',
-      question: "어떤 브랜드의 제빙기가 청소 가능한가요?",
-      answer: "호시자키, 카이저, 라셀르, 네오트, 브레마, 매니토웍 등 국내외 전 기종 청소 가능합니다. 수냉식/공냉식 상관없이 전문가가 현장에 맞는 최적의 방법으로 케어해 드립니다."
+      question: "어떤 브랜드의 업소용 제빙기 청소가 가능한가요?",
+      answer: "국내외 업소용 제빙기 대부분의 브랜드에 대한 작업이 가능합니다. 기종과 모델에 따라 작업 방식이 달라질 수 있어, 상담 시 모델명 확인 후 안내드립니다."
     }
   ];
 
@@ -41,7 +41,7 @@ const QA: React.FC = () => {
           {/* Header Title */}
           <div className="text-center mb-8 md:mb-16">
             <span className="text-[#0069D9] font-black text-xs md:text-sm mb-2 md:mb-3 block uppercase tracking-widest">FAQ</span>
-            <h1 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 tracking-tight">자주 묻는 질문</h1>
+            <h1 className="text-2xl md:text-5xl font-black text-gray-900 mb-3 md:mb-4 tracking-tight break-keep">업소용 제빙기 청소 자주 묻는 질문</h1>
             <p className="text-gray-500 text-xs md:text-lg italic break-keep font-medium leading-relaxed">
               궁금하신 점들을 모아 정리했습니다. 더 상세한 상담은 1577-7672로 전화주세요.
             </p>
@@ -107,7 +107,7 @@ const QA: React.FC = () => {
              <div className="relative z-10">
                 <h3 className="text-xl md:text-3xl font-black mb-3 md:mb-4 tracking-tight">더 궁금한 점이 있으신가요?</h3>
                 <p className="text-gray-400 text-xs md:text-base mb-8 md:mb-10 break-keep font-medium leading-relaxed">
-                  부산·울산·양산·김해 제빙기 청소 전문가가<br className="md:hidden"/> 직접 친절하게 상담해 드립니다.
+                  울산·부산·양산·김해 업소용 제빙기 청소 전문가가<br className="md:hidden"/> 제빙기 위생 관리 기준에 맞춰 안내드립니다.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                     <a href="tel:1577-7672" className="bg-[#0069D9] hover:bg-[#005bb5] text-white px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-black shadow-lg hover:shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 text-sm md:text-base">

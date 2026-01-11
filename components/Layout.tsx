@@ -104,8 +104,8 @@ const Footer: React.FC = () => {
               이끌림잇츠케어
             </h3>
             <p className="text-xs md:text-sm leading-relaxed text-gray-500 break-keep">
-              부산/울산/양산/김해 전 지역 업소용 제빙기 및 에어컨 완전 분해 청소 전문 업체.<br className="hidden md:block"/>
-              보이지 않는 곳의 곰팡이와 세균까지 완벽하게 제거합니다.
+              이끌림잇츠케어는 울산·부산·양산·김해 전 지역에서 업소용 제빙기 위생 청소 서비스를 제공합니다.<br className="hidden md:block"/>
+              카페, 맥주전문점, 기업체, 학교, 관공서 등에서 사용되는 제빙기 내부 상태를 기준으로 점검과 세척 중심의 위생 관리를 진행합니다.
             </p>
 
             {/* Social Icons */}
@@ -144,6 +144,20 @@ const Footer: React.FC = () => {
               울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span><br className="md:hidden"/> 부산광역시 사하구 오작로184번길32
             </p>
           </div>
+        </div>
+
+        {/* Service Area Info (Added) */}
+        <div className="flex flex-col items-center md:items-start gap-2 pb-8 mb-8 border-b border-gray-800">
+           <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider">서비스 지역 안내</span>
+           <div className="text-[13px] md:text-sm text-gray-500 font-medium flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1">
+              <Link to="/service-area" className="hover:text-gray-300 transition-colors">울산 제빙기 청소</Link>
+              <span className="text-gray-700">|</span>
+              <Link to="/service-area" className="hover:text-gray-300 transition-colors">부산 제빙기 청소</Link>
+              <span className="text-gray-700">|</span>
+              <Link to="/service-area" className="hover:text-gray-300 transition-colors">양산 제빙기 청소</Link>
+              <span className="text-gray-700">|</span>
+              <Link to="/service-area" className="hover:text-gray-300 transition-colors">김해 제빙기 청소</Link>
+           </div>
         </div>
         
         {/* Bottom Links */}
