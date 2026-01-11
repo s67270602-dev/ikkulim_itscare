@@ -87,7 +87,7 @@ const About: React.FC = () => {
             <div className="w-full lg:w-1/2">
                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative group">
                  <img 
-                   src="/images/itscare-ice-machine-cleaning-main-banner-1.jpg" 
+                   src="/images/itscare-commercial-ice-machine-cleaning.jpg" 
                    alt="출장 가능 지역 지도" 
                    className="w-full h-auto object-cover min-h-[250px] md:min-h-[400px] transition-transform duration-700 group-hover:scale-105"
                  />
