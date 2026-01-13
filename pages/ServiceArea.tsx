@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
 type Region = 'ulsan' | 'busan' | 'yangsan' | 'gimhae';
 
@@ -118,10 +117,7 @@ const ServiceArea: React.FC = () => {
     gimhae: [],
   };
 
-  // SEO helpers
-  const baseUrl = 'https://ikkulim-itscare.vercel.app';
-  const pageCanonical = `${baseUrl}/service-area`;
-
+  // SEO helpers (Helmet 제거로 "계산만" 남겨둠 — 나중에 index.html 메타로 옮길 때 사용 가능)
   const regionName = useMemo(() => {
     if (activeTab === 'ulsan') return '울산';
     if (activeTab === 'busan') return '부산';
@@ -129,67 +125,13 @@ const ServiceArea: React.FC = () => {
     return '김해';
   }, [activeTab]);
 
-  const seoTitle = useMemo(() => {
-    // 각 탭별 타이틀을 title에 반영 (CTR + 지역 키워드 강화)
-    return `${regionName} 제빙기 청소 서비스 지역 | 이끌림잇츠케어`;
+  // (옵션) 탭 바꿀 때 문서 제목만이라도 바꾸고 싶으면 이걸 사용해도 됨 (SEO는 아님, 사용자 보기용)
+  React.useEffect(() => {
+    document.title = `${regionName} 제빙기 청소 서비스 지역 | 이끌림잇츠케어`;
   }, [regionName]);
-
-  const seoDesc = useMemo(() => {
-    // 각 탭별 desc를 너무 길게 넣지 않고 “요약형”으로
-    return `이끌림잇츠케어는 ${regionName} 지역 업소용 제빙기 청소 및 위생 관리를 제공합니다. 카페, 맥주전문점, 기업체, 학교, 관공서 등 현장 기준으로 내부 점검과 세척·살균 중심의 위생 관리를 진행합니다.`;
-  }, [regionName]);
-
-  const seoKeywords = useMemo(() => {
-    // 지역 + 핵심 키워드 조합
-    const regionKw =
-      activeTab === 'ulsan'
-        ? '울산제빙기청소'
-        : activeTab === 'busan'
-        ? '부산제빙기청소'
-        : activeTab === 'yangsan'
-        ? '양산제빙기청소'
-        : '김해제빙기청소';
-
-    return [
-      regionKw,
-      '업소용제빙기청소',
-      '제빙기위생관리',
-      '제빙기분해세척',
-      '카페제빙기청소',
-      '제빙기살균',
-      '제빙기세척',
-    ].join(', ');
-  }, [activeTab]);
-
-  // JSON-LD(구조화데이터): LocalBusiness + Service (페이지 신뢰도 강화)
-  const jsonLd = useMemo(() => {
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: '이끌림잇츠케어',
-      url: baseUrl,
-      telephone: '1577-7672',
-      areaServed: ['Ulsan', 'Busan', 'Yangsan', 'Gimhae'],
-      serviceType: '업소용 제빙기 청소 및 위생 관리',
-      sameAs: ['https://blog.naver.com/itscare77', 'https://blog.naver.com/itscare88'],
-    };
-  }, []);
 
   return (
     <div className="pt-[60px] md:pt-[80px] font-pretendard min-h-screen bg-white">
-      {/* SEO */}
-      <Helmet>
-        <title>{seoTitle}</title>
-        <meta name="description" content={seoDesc} />
-        <meta name="keywords" content={seoKeywords} />
-        <link rel="canonical" href={pageCanonical} />
-        <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={seoDesc} />
-        <meta property="og:url" content={pageCanonical} />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
-
       {/* 1. Header Section */}
       <section className="bg-[#111827] py-16 md:py-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
