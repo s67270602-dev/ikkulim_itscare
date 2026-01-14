@@ -198,7 +198,7 @@ const UlsanIceMachineCleaning: React.FC = () => {
                 </li>
               </ul>
 
-              <p className="text-sm text-gray-500 mt-4">홈페이지와 블로그의 연결 신호를 강화해 검색 노출에 도움이 되도록 구성했습니다.</p>
+              <p className="text-sm text-gray-500 mt-4">네이버블로그 울산제빙기청소 현장기록</p>
             </section>
           </div>
         </div>
