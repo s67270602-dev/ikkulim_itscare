@@ -9,12 +9,41 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 서비스 지역 -->
+  <!-- 서비스 지역 허브 -->
   <url>
     <loc>https://ikkulim-itscare.vercel.app/service-area</loc>
     <lastmod>2026-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- 지역별 제빙기 청소 페이지 -->
+  <url>
+    <loc>https://ikkulim-itscare.vercel.app/ulsan-ice-machine-cleaning</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://ikkulim-itscare.vercel.app/busan-ice-machine-cleaning</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://ikkulim-itscare.vercel.app/yangsan-ice-machine-cleaning</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://ikkulim-itscare.vercel.app/gimhae-ice-machine-cleaning</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <!-- 서비스 안내 -->
