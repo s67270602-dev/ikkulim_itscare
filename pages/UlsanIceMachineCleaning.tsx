@@ -179,6 +179,8 @@ const UlsanIceMachineCleaning: React.FC = () => {
                 <i className="fas fa-calendar-check"></i>
                 울산 제빙기 청소 문의하기
               </Link>
+            </div>
+
             {/* ✅ 하단 허브 링크(블로그) */}
             <section className="mt-6 border-t pt-8">
               <h3 className="text-lg md:text-xl font-black text-gray-900 mb-4">지역별 제빙기 청소 현장 후기 모음</h3>
@@ -196,7 +198,7 @@ const UlsanIceMachineCleaning: React.FC = () => {
                 </li>
               </ul>
 
-          
+              <p className="text-sm text-gray-500 mt-4">홈페이지와 블로그의 연결 신호를 강화해 검색 노출에 도움이 되도록 구성했습니다.</p>
             </section>
           </div>
         </div>
