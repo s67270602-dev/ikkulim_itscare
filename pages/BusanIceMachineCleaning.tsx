@@ -11,7 +11,7 @@ const BusanIceMachineCleaning: React.FC = () => {
     document.title = seoTitle;
     const meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
     if (meta) meta.content = seoDesc;
-  }, []);
+  }, [seoTitle, seoDesc]);
 
   const content = {
     h1: '부산 제빙기 청소 | 카페·업소용 제빙기 위생 관리',
@@ -19,7 +19,12 @@ const BusanIceMachineCleaning: React.FC = () => {
 업소용 제빙기 사용 빈도가 높은 지역입니다.
 사용량이 많은 만큼 내부 관리 여부가
 얼음 위생과 매장 이미지에 직접적인 영향을 줍니다.`,
-    core: `부산 제빙기 청소 현장에서는
+    // ✅ (추가) “현장 기반·분해 점검 사례” 신뢰 문장 삽입
+    core: `부산 카페·맥주전문점 제빙기 현장을 기준으로
+실제 분해 점검 사례를 바탕으로
+위생 관리 기준을 정리했습니다.
+
+부산 제빙기 청소 현장에서는
 외관은 깔끔하지만 내부에는 물때와 스케일이
 쌓여 있는 경우를 자주 확인합니다.
 특히 장기간 내부 점검이 이루어지지 않은 경우
