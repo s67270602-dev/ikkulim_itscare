@@ -39,6 +39,13 @@ const BusanIceMachineCleaning: React.FC = () => {
     ],
   } as const;
 
+  // ✅ 부산 네이버 블로그 링크 (울산처럼 “현장 기록” 섹션에 표시)
+  const blogLinks = [
+    { title: '부산 부산진구 카페 제빙기청소 현장 후기', url: 'https://blog.naver.com/itscare88/224145284596' },
+    { title: '부산 카페 제빙기청소, 미루면 안 되는 이유｜카페 현장에서 본 현실', url: 'https://blog.naver.com/itscare88/224143730051' },
+    { title: '부산제빙기청소 현장 기록｜해운대 달맞이길 카페 업소용 제빙기 분해 세척', url: 'https://blog.naver.com/itscare88/224143662647' },
+  ];
+
   return (
     <div className="pt-[60px] md:pt-[80px] font-pretendard min-h-screen bg-white">
       {/* Hero */}
@@ -98,6 +105,47 @@ const BusanIceMachineCleaning: React.FC = () => {
               <p className="text-gray-700 text-[15px] md:text-lg leading-7 whitespace-pre-line font-medium break-keep">
                 {content.closing}
               </p>
+            </section>
+
+            {/* ✅ 부산 블로그 섹션 (울산과 동일 구조) */}
+            <section className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-3 break-keep">부산 제빙기 위생 관리 현장 기록</h3>
+
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed break-keep">
+                실제 부산 지역 카페·업소에서 진행한 제빙기 내부 점검 및 위생 관리 과정을 네이버 블로그에 기록하고 있습니다.
+              </p>
+
+              {/* 안내 박스 */}
+              <div className="mt-4 bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-5">
+                <p className="text-gray-800 font-bold text-sm md:text-base leading-relaxed break-keep whitespace-pre-line">
+                  부산 지역 업소용 제빙기 위생 관리 기준은
+                  {'\n'}부산 제빙기 청소 안내 페이지에서 정리되어 있습니다.
+                </p>
+              </div>
+
+              {/* 링크 목록 */}
+              <ul className="mt-5 space-y-3 text-base md:text-lg font-semibold">
+                {blogLinks.map((item, idx) => (
+                  <li key={idx}>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-[#0069D9] hover:underline break-keep">
+                      ▶ {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* 블로그 홈 링크 */}
+              <div className="mt-6 pt-5 border-t">
+                <a
+                  href="https://blog.naver.com/itscare88"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#0069D9] font-bold hover:underline"
+                >
+                  ▶ 부산 제빙기 청소 현장 후기 모음 (네이버 블로그)
+                  <i className="fas fa-arrow-up-right-from-square text-sm"></i>
+                </a>
+              </div>
             </section>
 
             {/* Images */}
