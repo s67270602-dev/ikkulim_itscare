@@ -180,30 +180,7 @@ const UlsanIceMachineCleaning: React.FC = () => {
                 울산 제빙기 청소 문의하기
               </Link>
             </div>
-
-            {/* ✅ 하단 허브 링크(블로그) */}
-            <section className="mt-6 border-t pt-8">
-              <h3 className="text-lg md:text-xl font-black text-gray-900 mb-4">지역별 제빙기 청소 현장 후기 모음</h3>
-
-              <ul className="space-y-3 text-[#0069D9] font-semibold text-base md:text-lg">
-                <li>
-                  <a href="https://blog.naver.com/itscare77" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                    ▶ 울산 제빙기 청소 현장 후기 모음 (네이버 블로그)
-                  </a>
-                </li>
-                <li>
-                  <a href="https://blog.naver.com/itscare88" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                    ▶ 부산·양산·김해 제빙기 청소 현장 후기 모음 (네이버 블로그)
-                  </a>
-                </li>
-              </ul>
-
-              <p className="text-sm text-gray-500 mt-4">홈페이지와 블로그의 연결 신호를 강화해 검색 노출에 도움이 되도록 구성했습니다.</p>
-            </section>
-          </div>
-        </div>
-      </section>
-    </div>
+            </div>
   );
 };
 
