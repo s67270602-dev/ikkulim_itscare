@@ -257,8 +257,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {children}
       </main>
       <Footer />
-      <Chatbot />
-    </div>
+          </div>
   );
 };
 
