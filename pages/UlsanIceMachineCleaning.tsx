@@ -180,7 +180,9 @@ const UlsanIceMachineCleaning: React.FC = () => {
                 울산 제빙기 청소 문의하기
               </Link>
             </div>
-            </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
