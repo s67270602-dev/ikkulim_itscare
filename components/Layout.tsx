@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
@@ -20,28 +19,49 @@ const Header: React.FC = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
-          {NAV_LINKS.map((link) => {
-            const isActive = location.pathname === link.path;
-            return (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-[15px] font-bold transition-colors hover:text-[#0069D9] relative ${
-                  isActive ? 'text-[#0069D9]' : 'text-gray-600'
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
-        
+        {/* Desktop Nav + Badge */}
+        <div className="hidden lg:flex items-center">
+          {/* Desktop Nav */}
+          <nav className="flex items-center gap-8 xl:gap-10">
+            {NAV_LINKS.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-[15px] font-bold transition-colors hover:text-[#0069D9] relative ${
+                    isActive ? 'text-[#0069D9]' : 'text-gray-600'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* ✅ 메뉴 옆 표시 문구 + 마우스오버 툴팁 */}
+          <div className="relative group ml-5">
+            <div
+              className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 text-[13px] font-extrabold text-orange-700 shadow-sm"
+              aria-label="영업 종료 후 야간 작업 가능"
+            >
+              <span className="inline-block h-2.5 w-2.5 rounded-full bg-orange-500 animate-pulse" />
+              영업 종료 후 야간 작업 가능
+            </div>
+
+            {/* Tooltip */}
+            <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 w-[290px] -translate-x-1/2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 shadow-lg opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              카페·업소 운영 시간에 맞춰<br />
+              영업 마감 후 제빙기 위생 작업을 진행합니다.
+              <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-l border-t border-slate-200 bg-white" />
+            </div>
+          </div>
+        </div>
+
+        {/* Emergency Call Button (Desktop) */}
         <div className="hidden lg:block">
-            {/* Emergency Call Button */}
-          <a 
-            href="tel:1577-7672" 
+          <a
+            href="tel:1577-7672"
             className="bg-[#FF7E00] text-white px-5 py-2.5 rounded font-bold text-sm hover:bg-[#ff8f26] transition-all flex items-center gap-2 shadow-md active:scale-95"
           >
             <i className="fas fa-phone-volume"></i>
@@ -50,9 +70,10 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="lg:hidden text-2xl p-2 text-gray-900 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="모바일 메뉴 토글"
         >
           <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
@@ -74,8 +95,23 @@ const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
+
+            {/* 모바일에서도 '야간 작업 가능' 안내를 아주 짧게 한 줄로 표시 (선택) */}
+            <div className="pt-2">
+              <div className="rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm font-extrabold text-orange-700 shadow-sm flex items-center gap-2">
+                <span className="inline-block h-2.5 w-2.5 rounded-full bg-orange-500" />
+                영업 종료 후 야간 작업 가능
+              </div>
+              <p className="mt-2 text-xs text-gray-500 leading-relaxed">
+                카페·업소 운영 시간에 맞춰 영업 마감 후 위생 작업을 진행합니다.
+              </p>
+            </div>
+
             <div className="pt-4">
-              <a href="tel:1577-7672" className="bg-[#FF7E00] text-white text-center block w-full py-4 rounded-xl font-black shadow-xl">
+              <a
+                href="tel:1577-7672"
+                className="bg-[#FF7E00] text-white text-center block w-full py-4 rounded-xl font-black shadow-xl"
+              >
                 <i className="fas fa-phone-volume mr-2"></i>
                 긴급출동 1577-7672
               </a>
@@ -95,7 +131,6 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-5 md:px-6 max-w-[1200px]">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-0 border-b border-gray-800 pb-8 md:pb-10 mb-8 md:mb-10 text-center md:text-left">
-          
           {/* Brand Info */}
           <div className="space-y-3 md:space-y-4 max-w-sm md:max-w-none mx-auto md:mx-0">
             <h3 className="text-white text-xl md:text-2xl font-black tracking-tight flex items-center justify-center md:justify-start gap-2">
@@ -103,32 +138,33 @@ const Footer: React.FC = () => {
               이끌림잇츠케어
             </h3>
             <p className="text-xs md:text-sm leading-relaxed text-gray-500 break-keep">
-              이끌림잇츠케어는 울산·부산·양산·김해 전 지역에서 업소용 제빙기 위생 청소 서비스를 제공합니다.<br className="hidden md:block"/>
+              이끌림잇츠케어는 울산·부산·양산·김해 전 지역에서 업소용 제빙기 위생 청소 서비스를 제공합니다.
+              <br className="hidden md:block" />
               카페, 맥주전문점, 기업체, 학교, 관공서 등에서 사용되는 제빙기 내부 상태를 기준으로 점검과 세척 중심의 위생 관리를 진행합니다.
             </p>
 
             {/* Social Icons */}
             <div className="flex items-center justify-center md:justify-start gap-3 pt-2">
-               {/* Naver Blog */}
-               <a 
-                 href="https://blog.naver.com/itscare77" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-[#03C75A] flex items-center justify-center text-white shadow-md hover:-translate-y-1 transition-transform group"
-                 title="네이버 블로그"
-               >
-                 <span className="font-black text-sm group-hover:scale-110 transition-transform">N</span>
-               </a>
-               {/* Kakao Channel */}
-               <a 
-                 href="https://pf.kakao.com/_Azgyn" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="w-10 h-10 rounded-full bg-[#FAE100] flex items-center justify-center text-[#3B1E1E] shadow-md hover:-translate-y-1 transition-transform group"
-                 title="카카오톡 채널"
-               >
-                 <i className="fas fa-comment text-lg group-hover:scale-110 transition-transform"></i>
-               </a>
+              {/* Naver Blog */}
+              <a
+                href="https://blog.naver.com/itscare77"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#03C75A] flex items-center justify-center text-white shadow-md hover:-translate-y-1 transition-transform group"
+                title="네이버 블로그"
+              >
+                <span className="font-black text-sm group-hover:scale-110 transition-transform">N</span>
+              </a>
+              {/* Kakao Channel */}
+              <a
+                href="https://pf.kakao.com/_Azgyn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#FAE100] flex items-center justify-center text-[#3B1E1E] shadow-md hover:-translate-y-1 transition-transform group"
+                title="카카오톡 채널"
+              >
+                <i className="fas fa-comment text-lg group-hover:scale-110 transition-transform"></i>
+              </a>
             </div>
           </div>
 
@@ -136,12 +172,20 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-3 md:gap-4 md:text-right">
             <div className="flex flex-col items-center md:items-end gap-1">
               <span className="text-[10px] md:text-xs font-bold text-[#0069D9] uppercase tracking-wider">Customer Center</span>
-              <a href="tel:1577-7672" className="text-2xl md:text-3xl font-black text-white hover:text-[#0069D9] transition-colors tracking-tight">1577-7672</a>
+              <a
+                href="tel:1577-7672"
+                className="text-2xl md:text-3xl font-black text-white hover:text-[#0069D9] transition-colors tracking-tight"
+              >
+                1577-7672
+              </a>
             </div>
             <p className="text-xs md:text-sm text-gray-500 leading-relaxed break-keep">
-              운영시간 : 09:00 - 22:00 (연중무휴)<br/>
-              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span><br className="md:hidden"/> 
-              부산광역시 사하구 오작로184번길32 <span className="hidden md:inline">/</span><br className="md:hidden"/>
+              운영시간 : 09:00 - 22:00 (연중무휴)
+              <br />
+              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span>
+              <br className="md:hidden" />
+              부산광역시 사하구 오작로184번길32 <span className="hidden md:inline">/</span>
+              <br className="md:hidden" />
               부산광역시 사하구 다대로 142번길106 1층
             </p>
           </div>
@@ -149,100 +193,127 @@ const Footer: React.FC = () => {
 
         {/* Service Area Info (Added) */}
         <div className="flex flex-col items-center md:items-start gap-2 pb-8 mb-8 border-b border-gray-800">
-           <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider">서비스 지역 안내</span>
-           <div className="text-[13px] md:text-sm text-gray-500 font-medium flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1">
-              <Link to="/service-area" className="hover:text-gray-300 transition-colors">울산 제빙기 청소</Link>
-              <span className="text-gray-700">|</span>
-              <Link to="/service-area" className="hover:text-gray-300 transition-colors">부산 제빙기 청소</Link>
-              <span className="text-gray-700">|</span>
-              <Link to="/service-area" className="hover:text-gray-300 transition-colors">양산 제빙기 청소</Link>
-              <span className="text-gray-700">|</span>
-              <Link to="/service-area" className="hover:text-gray-300 transition-colors">김해 제빙기 청소</Link>
-           </div>
+          <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wider">서비스 지역 안내</span>
+          <div className="text-[13px] md:text-sm text-gray-500 font-medium flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1">
+            <Link to="/service-area" className="hover:text-gray-300 transition-colors">
+              울산 제빙기 청소
+            </Link>
+            <span className="text-gray-700">|</span>
+            <Link to="/service-area" className="hover:text-gray-300 transition-colors">
+              부산 제빙기 청소
+            </Link>
+            <span className="text-gray-700">|</span>
+            <Link to="/service-area" className="hover:text-gray-300 transition-colors">
+              양산 제빙기 청소
+            </Link>
+            <span className="text-gray-700">|</span>
+            <Link to="/service-area" className="hover:text-gray-300 transition-colors">
+              김해 제빙기 청소
+            </Link>
+          </div>
         </div>
-        
+
         {/* Bottom Links */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-5 text-[11px] md:text-xs font-medium text-gray-500">
           <p>&copy; 2024 Ikkleem It's Care. All Rights Reserved.</p>
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 px-4 md:px-0">
-            <Link to="/services" className="hover:text-white transition-colors">서비스 소개</Link>
+            <Link to="/services" className="hover:text-white transition-colors">
+              서비스 소개
+            </Link>
             <span className="text-gray-700">|</span>
-            <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors">개인정보처리방침</button>
+            <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-white transition-colors">
+              개인정보처리방침
+            </button>
             <span className="text-gray-700">|</span>
-            <a href="https://blog.naver.com/itscare77" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">공식 블로그</a>
+            <a
+              href="https://blog.naver.com/itscare77"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              공식 블로그
+            </a>
             <span className="text-gray-700">|</span>
-            <Link to="/contact" className="hover:text-white transition-colors">견적문의</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">
+              견적문의
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Privacy Policy Modal */}
       {isPrivacyOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setIsPrivacyOpen(false)}>
-            <div className="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] flex flex-col shadow-2xl animate-fade-in relative" onClick={e => e.stopPropagation()}>
-                
-                {/* Header */}
-                <div className="p-5 md:p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
-                    <h2 className="text-lg md:text-xl font-black text-gray-900">개인정보처리방침</h2>
-                    <button 
-                        onClick={() => setIsPrivacyOpen(false)}
-                        className="text-gray-400 hover:text-gray-600 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200"
-                    >
-                        <i className="fas fa-times text-lg"></i>
-                    </button>
-                </div>
-                
-                {/* Content */}
-                <div className="p-5 md:p-6 overflow-y-auto text-sm text-gray-700 leading-relaxed space-y-6">
-                    <div className="bg-gray-50 p-4 rounded-xl text-gray-600 text-xs md:text-sm">
-                        이끌림잇츠케어(이하 “회사”)는 개인정보 보호법 등 관련 법령을 준수하며,
-                        이용자의 개인정보를 보호하기 위해 다음과 같은 개인정보처리방침을 수립·공개합니다.
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">1. 수집하는 개인정보 항목</h4>
-                        <p>회사는 카카오톡 채팅 상담을 통해 이용자가 자발적으로 제공하는 이름, 연락처, 상담 내용 등의 개인정보를 수집할 수 있습니다.</p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">2. 개인정보의 수집 및 이용 목적</h4>
-                        <p>수집된 개인정보는 상담 문의 응대 및 서비스 안내를 목적으로만 이용됩니다.</p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">3. 개인정보의 보유 및 이용 기간</h4>
-                        <p>개인정보는 상담 목적 달성 후 즉시 파기하며, 관계 법령에 따라 보관이 필요한 경우 해당 기간 동안 보관합니다.</p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">4. 개인정보의 제3자 제공 및 위탁</h4>
-                        <p>회사는 원활한 상담을 위해 카카오톡 채널 서비스를 이용하며, 이 과정에서 카카오 주식회사에 개인정보 처리가 위탁될 수 있습니다.</p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">5. 개인정보의 파기 절차 및 방법</h4>
-                        <p>개인정보는 목적 달성 후 지체 없이 파기하며, 전자적 파일 형태의 정보는 복구 불가능한 방법으로 삭제합니다.</p>
-                    </div>
-
-                    <div className="space-y-2">
-                        <h4 className="font-bold text-gray-900 text-base">6. 개인정보 보호 책임자</h4>
-                        <p className="bg-blue-50 p-3 rounded-lg border border-blue-100 inline-block text-blue-900">
-                            <strong>상호명:</strong> 이끌림잇츠케어<br/>
-                            <strong>연락처:</strong> 1577-7672
-                        </p>
-                    </div>
-                </div>
-
-                {/* Footer */}
-                <div className="p-4 border-t bg-gray-50 rounded-b-2xl flex justify-end">
-                    <button 
-                        onClick={() => setIsPrivacyOpen(false)}
-                        className="bg-[#0069D9] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#005bb5] transition-colors shadow-sm"
-                    >
-                        확인했습니다
-                    </button>
-                </div>
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setIsPrivacyOpen(false)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] flex flex-col shadow-2xl animate-fade-in relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="p-5 md:p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
+              <h2 className="text-lg md:text-xl font-black text-gray-900">개인정보처리방침</h2>
+              <button
+                onClick={() => setIsPrivacyOpen(false)}
+                className="text-gray-400 hover:text-gray-600 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200"
+              >
+                <i className="fas fa-times text-lg"></i>
+              </button>
             </div>
+
+            {/* Content */}
+            <div className="p-5 md:p-6 overflow-y-auto text-sm text-gray-700 leading-relaxed space-y-6">
+              <div className="bg-gray-50 p-4 rounded-xl text-gray-600 text-xs md:text-sm">
+                이끌림잇츠케어(이하 “회사”)는 개인정보 보호법 등 관련 법령을 준수하며, 이용자의 개인정보를 보호하기 위해 다음과 같은
+                개인정보처리방침을 수립·공개합니다.
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">1. 수집하는 개인정보 항목</h4>
+                <p>회사는 카카오톡 채팅 상담을 통해 이용자가 자발적으로 제공하는 이름, 연락처, 상담 내용 등의 개인정보를 수집할 수 있습니다.</p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">2. 개인정보의 수집 및 이용 목적</h4>
+                <p>수집된 개인정보는 상담 문의 응대 및 서비스 안내를 목적으로만 이용됩니다.</p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">3. 개인정보의 보유 및 이용 기간</h4>
+                <p>개인정보는 상담 목적 달성 후 즉시 파기하며, 관계 법령에 따라 보관이 필요한 경우 해당 기간 동안 보관합니다.</p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">4. 개인정보의 제3자 제공 및 위탁</h4>
+                <p>회사는 원활한 상담을 위해 카카오톡 채널 서비스를 이용하며, 이 과정에서 카카오 주식회사에 개인정보 처리가 위탁될 수 있습니다.</p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">5. 개인정보의 파기 절차 및 방법</h4>
+                <p>개인정보는 목적 달성 후 지체 없이 파기하며, 전자적 파일 형태의 정보는 복구 불가능한 방법으로 삭제합니다.</p>
+              </div>
+
+              <div className="space-y-2">
+                <h4 className="font-bold text-gray-900 text-base">6. 개인정보 보호 책임자</h4>
+                <p className="bg-blue-50 p-3 rounded-lg border border-blue-100 inline-block text-blue-900">
+                  <strong>상호명:</strong> 이끌림잇츠케어
+                  <br />
+                  <strong>연락처:</strong> 1577-7672
+                </p>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="p-4 border-t bg-gray-50 rounded-b-2xl flex justify-end">
+              <button
+                onClick={() => setIsPrivacyOpen(false)}
+                className="bg-[#0069D9] text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-[#005bb5] transition-colors shadow-sm"
+              >
+                확인했습니다
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </footer>
@@ -253,11 +324,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col font-pretendard bg-white">
       <Header />
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
       <Footer />
-          </div>
+    </div>
   );
 };
 
