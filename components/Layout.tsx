@@ -9,15 +9,29 @@ const Header: React.FC = () => {
   return (
     <header className="fixed w-full z-50 bg-white border-b border-gray-100 h-[60px] md:h-[80px] flex items-center font-pretendard transition-all shadow-sm">
       <div className="container mx-auto px-4 sm:px-5 md:px-6 max-w-[1200px] flex justify-between items-center h-full">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group shrink-0">
-          <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center text-white bg-[#0069D9] shadow-sm">
-            <i className="fas fa-snowflake text-sm md:text-base"></i>
-          </div>
-          <span className="text-[16px] sm:text-[17px] md:text-xl font-black tracking-tight text-gray-900 whitespace-nowrap">
-            이끌림<span className="text-[#0069D9]">잇츠케어</span>
-          </span>
-        </Link>
+        {/* Left: Logo + (모바일 전용) 야간 작업 버튼 */}
+        <div className="flex items-center gap-2 min-w-0">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 group shrink-0 min-w-0">
+            <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center text-white bg-[#0069D9] shadow-sm">
+              <i className="fas fa-snowflake text-sm md:text-base"></i>
+            </div>
+            <span className="text-[16px] sm:text-[17px] md:text-xl font-black tracking-tight text-gray-900 whitespace-nowrap">
+              이끌림<span className="text-[#0069D9]">잇츠케어</span>
+            </span>
+          </Link>
+
+          {/* ✅ 모바일에서 로고 옆에 항상 보이는 '야간 작업 가능' (전화 연결) */}
+          <a
+            href="tel:1577-7672"
+            className="lg:hidden inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-2.5 py-1 text-[12px] font-extrabold text-orange-700 shadow-sm active:scale-[0.99] transition-transform whitespace-nowrap"
+            aria-label="영업 종료 후 야간 작업 가능 1577-7672 전화 연결"
+            title="영업 종료 후 야간 작업 가능"
+          >
+            <span className="inline-block h-2 w-2 rounded-full bg-orange-500" />
+            야간 작업 가능
+          </a>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -37,7 +51,7 @@ const Header: React.FC = () => {
           })}
         </nav>
 
-        {/* Desktop Right Button (문구 변경) */}
+        {/* ✅ PC 상단 우측 버튼: '긴급출동' 삭제 → 야간 작업 가능 문구로 */}
         <div className="hidden lg:block shrink-0">
           <a
             href="tel:1577-7672"
@@ -46,11 +60,8 @@ const Header: React.FC = () => {
             title="영업 종료 후 야간 작업 가능 (1577-7672)"
           >
             <i className="fas fa-phone-volume text-base"></i>
-
-            {/* ✅ 기존 '긴급출동 1577-7672' 문구 삭제 → 야간 작업 가능로 교체 */}
             <div className="leading-tight">
               <div className="text-[13px] font-black whitespace-nowrap">영업 종료 후 야간 작업 가능</div>
-              {/* 번호는 작게 유지 (모바일/PC 모두 전환에 도움) */}
               <div className="text-[11px] font-extrabold opacity-95 whitespace-nowrap">1577-7672</div>
             </div>
           </a>
@@ -58,7 +69,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-2xl p-2 text-gray-900 transition-colors"
+          className="lg:hidden text-2xl p-2 text-gray-900 transition-colors shrink-0"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="모바일 메뉴 열기/닫기"
         >
@@ -83,7 +94,7 @@ const Header: React.FC = () => {
               </Link>
             ))}
 
-            {/* Mobile Call Button (문구 변경 + 모바일 최적화) */}
+            {/* 모바일 메뉴 안에도 전화 버튼(보조) */}
             <div className="pt-4">
               <a
                 href="tel:1577-7672"
@@ -117,14 +128,12 @@ const Footer: React.FC = () => {
               <i className="fas fa-snowflake text-[#0069D9]"></i>
               이끌림잇츠케어
             </h3>
-
             <p className="text-xs md:text-sm leading-relaxed text-gray-500 break-keep">
-              이끌림잇츠케어는 울산·부산·양산·김해 전 지역에서 업소용 제빙기 위생 청소 서비스를 제공합니다.
-              <br className="hidden md:block" />
+              이끌림잇츠케어는 울산·부산·양산·김해 전 지역에서 업소용 제빙기 위생 청소 서비스를 제공합니다.<br className="hidden md:block" />
               카페, 맥주전문점, 기업체, 학교, 관공서 등에서 사용되는 제빙기 내부 상태를 기준으로 점검과 세척 중심의 위생 관리를 진행합니다.
             </p>
 
-            {/* ✅ Social Icons (울산 블로그 + 부산 블로그 추가 / 아이콘 밑에 울산·부산 표기) */}
+            {/* ✅ Social Icons: 울산 블로그 + 부산 블로그 + 카카오 / 아이콘 아래 지역 표기 */}
             <div className="flex items-center justify-center md:justify-start gap-4 pt-2">
               {/* 울산 블로그 */}
               <div className="flex flex-col items-center gap-1">
@@ -177,20 +186,14 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-3 md:gap-4 md:text-right">
             <div className="flex flex-col items-center md:items-end gap-1">
               <span className="text-[10px] md:text-xs font-bold text-[#0069D9] uppercase tracking-wider">Customer Center</span>
-              <a
-                href="tel:1577-7672"
-                className="text-2xl md:text-3xl font-black text-white hover:text-[#0069D9] transition-colors tracking-tight"
-              >
+              <a href="tel:1577-7672" className="text-2xl md:text-3xl font-black text-white hover:text-[#0069D9] transition-colors tracking-tight">
                 1577-7672
               </a>
             </div>
             <p className="text-xs md:text-sm text-gray-500 leading-relaxed break-keep">
-              운영시간 : 09:00 - 22:00 (연중무휴)
-              <br />
-              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span>
-              <br className="md:hidden" />
-              부산광역시 사하구 오작로184번길32 <span className="hidden md:inline">/</span>
-              <br className="md:hidden" />
+              운영시간 : 09:00 - 22:00 (연중무휴)<br />
+              울산광역시 동구 동진5길62 <span className="hidden md:inline">/</span><br className="md:hidden" />
+              부산광역시 사하구 오작로184번길32 <span className="hidden md:inline">/</span><br className="md:hidden" />
               부산광역시 사하구 다대로 142번길106 1층
             </p>
           </div>
@@ -229,14 +232,8 @@ const Footer: React.FC = () => {
 
       {/* Privacy Policy Modal */}
       {isPrivacyOpen && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-          onClick={() => setIsPrivacyOpen(false)}
-        >
-          <div
-            className="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] flex flex-col shadow-2xl animate-fade-in relative"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setIsPrivacyOpen(false)}>
+          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] flex flex-col shadow-2xl animate-fade-in relative" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="p-5 md:p-6 border-b flex justify-between items-center bg-gray-50 rounded-t-2xl">
               <h2 className="text-lg md:text-xl font-black text-gray-900">개인정보처리방침</h2>
