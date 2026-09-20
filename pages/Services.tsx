@@ -71,6 +71,7 @@ const Services: React.FC = () => {
           </h1>
           <p className="mx-auto mt-3 max-w-xl break-keep text-sm font-medium leading-relaxed text-gray-600 md:mt-5 md:text-lg">
             기종과 용량별 기준 가격을 안내드립니다.<br className="hidden md:block" />
+            울산·부산·양산·김해 전 지역 업소용 제빙기 청소 전문 이끌림잇츠케어가<br className="hidden md:block" />
             매장 환경과 제빙기 상태를 확인한 뒤 정확한 작업 범위를 상담해 드립니다.
           </p>
         </div>
@@ -83,7 +84,7 @@ const Services: React.FC = () => {
               <p className="text-sm font-black text-[#0069D9]">STANDARD PRICE</p>
               <h2 className="mt-1 text-2xl font-black tracking-tight text-gray-900 md:text-3xl">기종별 청소 기준 가격</h2>
             </div>
-            <p className="text-sm font-medium text-gray-500">모든 표기 금액은 부가세 포함 기준입니다.</p>
+            <p className="text-sm font-medium text-gray-500">카페·음식점·주점 등 업소용 제빙기 청소 기준 가격 · 모든 표기 금액은 부가세 포함 기준입니다.</p>
           </div>
 
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
@@ -142,7 +143,7 @@ const Services: React.FC = () => {
           <div>
             <p className="text-sm font-black text-[#0069D9]">INCLUDED SERVICE</p>
             <h2 className="mt-2 break-keep text-2xl font-black tracking-tight text-gray-900 md:text-4xl">가격에는 어떤 서비스가<br className="hidden lg:block" /> 포함되나요?</h2>
-            <p className="mt-4 break-keep text-[15px] font-medium leading-relaxed text-gray-600 md:text-lg">외관만 닦는 청소가 아니라, 제빙기 내부 상태를 기준으로 분해·세척·위생 관리·작동 확인까지 진행합니다.</p>
+            <p className="mt-4 break-keep text-[15px] font-medium leading-relaxed text-gray-600 md:text-lg">울산 제빙기 청소, 부산 제빙기 청소, 양산 제빙기 청소, 김해 제빙기 청소가 필요한 매장을 대상으로 내부 상태를 기준으로 분해·세척·위생 관리·작동 확인까지 진행합니다.</p>
             <QuoteButton label="내 제빙기 견적 문의하기" className="mt-7 bg-[#0069D9] px-6 py-3.5 text-sm text-white shadow-lg shadow-blue-200 hover:bg-[#0057B5]" />
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -180,7 +181,7 @@ const Services: React.FC = () => {
           <div>
             <p className="text-sm font-black text-blue-200">FREE CONSULTATION</p>
             <h2 className="mt-2 break-keep text-2xl font-black text-white md:text-3xl">제빙기 종류가 헷갈리시나요?</h2>
-            <p className="mt-2 break-keep text-sm font-medium leading-relaxed text-blue-100 md:text-base">사진과 매장 정보를 남겨주시면 적합한 청소 기준을 안내해 드립니다.</p>
+            <p className="mt-2 break-keep text-sm font-medium leading-relaxed text-blue-100 md:text-base">울산·부산·양산·김해 업소용 제빙기 청소 견적이 필요하시면 사진과 매장 정보를 남겨주세요.</p>
           </div>
           <QuoteButton label="견적 문의하기" className="w-full bg-white px-7 py-4 text-sm text-[#0069D9] shadow-lg hover:bg-blue-50 md:w-auto" />
         </div>
