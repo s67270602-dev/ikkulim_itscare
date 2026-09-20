@@ -19,7 +19,12 @@ import GimhaeIceMachineCleaning from './pages/GimhaeIceMachineCleaning';
 // 페이지 이동 시 스크롤 최상단
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  useEffect(() => {
+    // Effects may only return a cleanup function.  Keeping this as a block
+    // guarantees the return value of scrollTo is never treated as cleanup
+    // during a route transition.
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 };
 
