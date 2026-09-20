@@ -58,7 +58,7 @@ const QuoteButton: React.FC<{ className?: string; label?: string }> = ({ classNa
 const Services: React.FC = () => {
   return (
     <div className="bg-white pt-[60px] font-pretendard md:pt-[80px]">
-      <section className="relative overflow-hidden bg-[#F4F9FF] px-5 py-14 md:px-6 md:py-24">
+      <section className="relative overflow-hidden bg-[#F4F9FF] px-5 py-9 md:px-6 md:py-24">
         <div className="absolute -left-20 top-0 h-56 w-56 rounded-full bg-blue-100/70 blur-3xl" />
         <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-cyan-100/80 blur-3xl" />
         <div className="relative mx-auto max-w-[860px] text-center">
@@ -66,61 +66,69 @@ const Services: React.FC = () => {
             <i className="fas fa-snowflake" aria-hidden="true" />
             ICE MAKER CLEANING PRICE
           </span>
-          <h1 className="mt-5 break-keep text-3xl font-black tracking-tight text-gray-900 md:mt-6 md:text-5xl">
+          <h1 className="mt-4 break-keep text-[26px] font-black tracking-tight text-gray-900 md:mt-6 md:text-5xl">
             업소용 제빙기 청소 비용 안내
           </h1>
-          <p className="mx-auto mt-4 max-w-xl break-keep text-[15px] font-medium leading-relaxed text-gray-600 md:mt-5 md:text-lg">
+          <p className="mx-auto mt-3 max-w-xl break-keep text-sm font-medium leading-relaxed text-gray-600 md:mt-5 md:text-lg">
             기종과 용량별 기준 가격을 안내드립니다.<br className="hidden md:block" />
             매장 환경과 제빙기 상태를 확인한 뒤 정확한 작업 범위를 상담해 드립니다.
           </p>
         </div>
       </section>
 
-      <section className="px-5 py-12 md:px-6 md:py-20">
+      <section className="px-5 py-9 md:px-6 md:py-20">
         <div className="mx-auto max-w-[1120px]">
           <div className="mb-7 flex flex-col gap-2 md:mb-9 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-black text-[#0069D9]">STANDARD PRICE</p>
               <h2 className="mt-1 text-2xl font-black tracking-tight text-gray-900 md:text-3xl">기종별 청소 기준 가격</h2>
             </div>
-            <p className="text-sm font-medium text-gray-500">부가세 포함 여부 등 세부 사항은 상담 시 안내드립니다.</p>
+            <p className="text-sm font-medium text-gray-500">모든 표기 금액은 부가세 포함 기준입니다.</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
             {pricePlans.map((plan) => (
               <article
                 key={plan.name}
-                className="group flex min-h-[270px] flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+                className="group flex min-h-0 flex-col rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg sm:min-h-[270px] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-lg text-[#0069D9]">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-base text-[#0069D9] sm:h-11 sm:w-11 sm:rounded-xl sm:text-lg">
                     <i className={`fas ${plan.icon}`} aria-hidden="true" />
                   </div>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-bold text-gray-500">기준 가격</span>
+                  <span className="rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-bold text-gray-500 sm:px-2.5 sm:py-1 sm:text-[11px]">기준 가격</span>
                 </div>
-                <h3 className="mt-6 text-xl font-black text-gray-900">{plan.name}</h3>
-                <p className="mt-2 min-h-[42px] break-keep text-sm font-medium leading-relaxed text-gray-500">{plan.detail}</p>
-                <div className="mt-5 border-t border-gray-100 pt-5">
-                  <span className="text-3xl font-black tracking-tight text-[#0069D9]">{plan.price}</span>
+                <div className="mt-3 flex items-end justify-between gap-3 sm:mt-6 sm:block">
+                  <div>
+                    <h3 className="text-base font-black text-gray-900 sm:text-xl">{plan.name}</h3>
+                    <p className="mt-0.5 break-keep text-xs font-medium leading-relaxed text-gray-500 sm:mt-2 sm:min-h-[42px] sm:text-sm">{plan.detail}</p>
+                  </div>
+                  <div className="shrink-0 sm:mt-5 sm:border-t sm:border-gray-100 sm:pt-5">
+                    <span className="text-xl font-black tracking-tight text-[#0069D9] sm:text-3xl">{plan.price}</span>
+                  </div>
                 </div>
-                <QuoteButton className="mt-auto w-full bg-[#E8F4FF] py-3 text-sm text-[#0069D9] group-hover:bg-[#0069D9] group-hover:text-white" />
+                <div className="mt-auto hidden pt-5 sm:block">
+                  <QuoteButton className="w-full bg-[#E8F4FF] py-3 text-sm text-[#0069D9] group-hover:bg-[#0069D9] group-hover:text-white" />
+                </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-5 grid grid-cols-1 gap-3 md:mt-6 md:grid-cols-2 md:gap-5">
-            <div className="flex items-start gap-4 rounded-2xl border border-orange-200 bg-orange-50 p-5 md:p-6">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FF7E00] text-white"><i className="fas fa-moon" aria-hidden="true" /></span>
+          <QuoteButton label="내 제빙기 견적 문의하기" className="mt-4 w-full bg-[#0069D9] py-3.5 text-sm text-white shadow-lg shadow-blue-100 hover:bg-[#0057B5] sm:hidden" />
+
+          <div className="mt-4 grid grid-cols-1 gap-2 md:mt-6 md:grid-cols-2 md:gap-5">
+            <div className="flex items-center gap-3 rounded-xl border border-orange-200 bg-orange-50 p-3.5 md:items-start md:gap-4 md:rounded-2xl md:p-6">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FF7E00] text-sm text-white md:h-10 md:w-10 md:rounded-xl"><i className="fas fa-moon" aria-hidden="true" /></span>
               <div>
-                <p className="text-sm font-black text-orange-800">야간 작업 안내</p>
-                <p className="mt-1 break-keep text-base font-bold leading-relaxed text-gray-800">오후 6시 이후 야간 작업: <span className="text-[#E56600]">추가 30,000원</span></p>
+                <p className="text-xs font-black text-orange-800 md:text-sm">야간 작업 안내</p>
+                <p className="mt-0.5 break-keep text-sm font-bold leading-relaxed text-gray-800 md:mt-1 md:text-base">오후 6시 이후 야간 작업: <span className="text-[#E56600]">추가 30,000원</span></p>
               </div>
             </div>
-            <div className="flex items-start gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-5 md:p-6">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0069D9] text-white"><i className="fas fa-calendar-check" aria-hidden="true" /></span>
+            <div className="flex items-center gap-3 rounded-xl border border-blue-200 bg-blue-50 p-3.5 md:items-start md:gap-4 md:rounded-2xl md:p-6">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0069D9] text-sm text-white md:h-10 md:w-10 md:rounded-xl"><i className="fas fa-calendar-check" aria-hidden="true" /></span>
               <div>
-                <p className="text-sm font-black text-[#0069D9]">정기관리 혜택</p>
-                <p className="mt-1 break-keep text-base font-bold leading-relaxed text-gray-800">1개월~3개월 정기관리 선택 시 <span className="text-[#0069D9]">20,000원 할인</span></p>
+                <p className="text-xs font-black text-[#0069D9] md:text-sm">정기관리 혜택</p>
+                <p className="mt-0.5 break-keep text-sm font-bold leading-relaxed text-gray-800 md:mt-1 md:text-base">1개월~3개월 정기관리 선택 시 <span className="text-[#0069D9]">20,000원 할인</span></p>
               </div>
             </div>
           </div>
