@@ -30,19 +30,16 @@ const pricePlans = [
   },
 ];
 
-const includedServices = [
-  '제빙기 완전 분해 세척',
-  '내부 디테일 세척',
-  '내부 물때·스케일 제거',
-  '고온 스팀 위생 관리',
-  '조립 후 정상 작동 확인',
-];
-
 const processSteps = [
-  { number: '01', title: '상태 점검·분해', detail: '기종과 내부 상태를 확인한 뒤 구조에 맞춰 안전하게 분해합니다.', icon: 'fa-magnifying-glass' },
-  { number: '02', title: '내부 세척', detail: '물때와 스케일을 제거하고 필요한 부분을 세밀하게 세척합니다.', icon: 'fa-droplet' },
-  { number: '03', title: '위생 관리', detail: '고온 스팀으로 내부 위생 관리 과정을 진행합니다.', icon: 'fa-temperature-arrow-up' },
-  { number: '04', title: '조립·작동 확인', detail: '조립 후 얼음 생성과 정상 작동 상태를 확인합니다.', icon: 'fa-circle-check' },
+  { number: '01', title: '기기 점검', detail: '작업 전 전원, 급수 및 정상 제빙 작동 상태를 점검합니다.', icon: 'fa-magnifying-glass' },
+  { number: '02', title: '기기 분해', detail: '상판, 전면 패널, 얼음 저장고, 급수 노즐 등을 완전 분해합니다.', icon: 'fa-screwdriver-wrench' },
+  { number: '03', title: '친환경 세제 도포', detail: '식품용 안전 친환경 전용 세제를 도포해 찌든 오염을 불립니다.', icon: 'fa-spray-can-sparkles' },
+  { number: '04', title: '디테일 세척', detail: '분해 부품과 미세 틈새의 물때·곰팡이를 수작업으로 정밀 세척합니다.', icon: 'fa-hand-sparkles' },
+  { number: '05', title: '고압 스케일링 세척', detail: '강력 수압으로 배관 내벽 석회 스케일과 침전물을 분쇄·제거합니다.', icon: 'fa-droplet' },
+  { number: '06', title: '고온 스팀 살균·소독', detail: '100°C 이상 고온 고압 스팀으로 식중독균 및 미세 세균을 살균 관리합니다.', icon: 'fa-temperature-arrow-up' },
+  { number: '07', title: '기기 조립', detail: '살균 세척이 완료된 모든 부품을 오차 없이 정밀 재조립합니다.', icon: 'fa-screwdriver-wrench' },
+  { number: '08', title: 'UV 자외선 살균·소독', detail: '저장고 내부 UV-C 살균 소독으로 2차 잔존 오염을 관리합니다.', icon: 'fa-sun' },
+  { number: '09', title: '탈빙 체크·정상 작동 확인', detail: '정수·급수 시스템과 맑고 투명한 얼음 토출 상태를 최종 검수합니다.', icon: 'fa-circle-check' },
 ];
 
 const QuoteButton: React.FC<{ className?: string; label?: string }> = ({ className = '', label = '견적 문의하기' }) => (
@@ -143,14 +140,15 @@ const Services: React.FC = () => {
           <div>
             <p className="text-sm font-black text-[#0069D9]">INCLUDED SERVICE</p>
             <h2 className="mt-2 break-keep text-2xl font-black tracking-tight text-gray-900 md:text-4xl">가격에는 어떤 서비스가<br className="hidden lg:block" /> 포함되나요?</h2>
-            <p className="mt-4 break-keep text-[15px] font-medium leading-relaxed text-gray-600 md:text-lg">울산 제빙기 청소, 부산 제빙기 청소, 양산 제빙기 청소, 김해 제빙기 청소가 필요한 매장을 대상으로 내부 상태를 기준으로 분해·세척·위생 관리·작동 확인까지 진행합니다.</p>
+            <p className="mt-4 inline-flex rounded-full bg-blue-100 px-3 py-1.5 text-sm font-black text-[#0069D9]">9단계 표준 분해·살균 프로세스 (필수 순서)</p>
+            <p className="mt-4 break-keep text-[15px] font-medium leading-relaxed text-gray-600 md:text-lg">울산 제빙기 청소, 부산 제빙기 청소, 양산 제빙기 청소, 김해 제빙기 청소가 필요한 매장을 대상으로 9단계 표준 순서에 따라 내부 위생 관리를 진행합니다.</p>
             <QuoteButton label="내 제빙기 견적 문의하기" className="mt-7 bg-[#0069D9] px-6 py-3.5 text-sm text-white shadow-lg shadow-blue-200 hover:bg-[#0057B5]" />
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {includedServices.map((service, index) => (
-              <div key={service} className="flex min-h-[104px] items-center gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-sm font-black text-emerald-500">0{index + 1}</span>
-                <p className="break-keep text-[15px] font-bold leading-relaxed text-gray-800">{service}</p>
+          <div className="grid grid-cols-3 gap-2.5 md:gap-3">
+            {processSteps.map((step) => (
+              <div key={step.number} className="flex min-h-[92px] flex-col justify-between rounded-xl border border-gray-100 bg-white p-3 shadow-sm md:min-h-[112px] md:p-4">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-50 text-xs font-black text-[#0069D9] md:h-8 md:w-8">{step.number}</span>
+                <p className="mt-2 break-keep text-xs font-black leading-snug text-gray-800 md:text-sm">{step.title}</p>
               </div>
             ))}
           </div>
@@ -162,13 +160,14 @@ const Services: React.FC = () => {
           <div className="text-center">
             <p className="text-sm font-black text-[#0069D9]">CLEANING PROCESS</p>
             <h2 className="mt-2 text-2xl font-black tracking-tight text-gray-900 md:text-4xl">작업은 이렇게 진행됩니다</h2>
+            <p className="mt-3 break-keep text-sm font-medium text-gray-500 md:text-base">9단계 표준 분해·살균 프로세스를 순서대로 진행합니다.</p>
           </div>
-          <div className="relative mt-10 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-4 md:gap-5">
+          <div className="relative mt-8 grid grid-cols-1 gap-3 md:mt-12 md:grid-cols-3 md:gap-5">
             {processSteps.map((step) => (
-              <article key={step.number} className="relative rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                <span className="absolute right-5 top-4 text-4xl font-black text-blue-50">{step.number}</span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-lg text-[#0069D9]"><i className={`fas ${step.icon}`} aria-hidden="true" /></span>
-                <h3 className="mt-5 text-lg font-black text-gray-900">{step.title}</h3>
+              <article key={step.number} className="relative rounded-2xl border border-gray-100 bg-white p-5 shadow-sm md:p-6">
+                <span className="absolute right-5 top-4 text-4xl font-black text-blue-50 md:text-5xl">{step.number}</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-base text-[#0069D9] md:h-11 md:w-11 md:text-lg"><i className={`fas ${step.icon}`} aria-hidden="true" /></span>
+                <h3 className="mt-4 text-base font-black text-gray-900 md:mt-5 md:text-lg">{step.title}</h3>
                 <p className="mt-2 break-keep text-sm font-medium leading-relaxed text-gray-500">{step.detail}</p>
               </article>
             ))}
